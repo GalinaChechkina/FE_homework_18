@@ -3,6 +3,7 @@ const array = ["media/a1.jpg", "media/a2.jpg", "media/a3.jpg", "media/a4.jpeg", 
 const imageNode = document.querySelector(".image");
 const leftButtonNode = document.getElementById("left-button");
 const rightButtonNode = document.getElementById("right-button");
+
 imageNode.src = array[0];
 let i = 0;
 
@@ -14,6 +15,7 @@ rightButtonNode.addEventListener("click", () => {
         i++;
     }
     imageNode.src = array[i];
+    //imageNode.src = array[Math.abs(++i % array.length)];-вместо всего условного оператора
 })
 
 leftButtonNode.addEventListener ("click", ()=> {
@@ -24,4 +26,5 @@ leftButtonNode.addEventListener ("click", ()=> {
        i--; 
     }
     imageNode.src = array[i];
+    //imageNode.src = array[Math.abs(--i % array.length)];
  })
